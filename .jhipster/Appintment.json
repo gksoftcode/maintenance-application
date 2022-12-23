@@ -1,0 +1,31 @@
+{
+  "applications": "*",
+  "changelogDate": "20221223121430",
+  "dto": "no",
+  "embedded": false,
+  "entityTableName": "appintment",
+  "fields": [
+    {
+      "fieldName": "appDate",
+      "fieldType": "Instant"
+    },
+    {
+      "fieldName": "notes",
+      "fieldType": "String"
+    }
+  ],
+  "fluentMethods": true,
+  "jpaMetamodelFiltering": false,
+  "name": "Appintment",
+  "pagination": "no",
+  "readOnly": false,
+  "relationships": [
+    {
+      "otherEntityName": "client",
+      "otherEntityRelationshipName": "appintment",
+      "relationshipName": "client",
+      "relationshipType": "many-to-one"
+    }
+  ],
+  "service": "serviceClass"
+}

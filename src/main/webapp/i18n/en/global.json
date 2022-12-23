@@ -7,6 +7,23 @@
       "jhipster-needle-menu-add-element": "JHipster will add additional menu entries here (do not translate!)",
       "entities": {
         "main": "Entities",
+        "region": "Region",
+        "country": "Country",
+        "location": "Location",
+        "department": "Department",
+        "task": "Task",
+        "employee": "Employee",
+        "job": "Job",
+        "jobHistory": "Job History",
+        "client": "Client",
+        "appintment": "Appintment",
+        "actions": "Actions",
+        "itemModels": "Item Models",
+        "itemBrand": "Item Brand",
+        "status": "Status",
+        "workOrders": "Work Orders",
+        "workOrdersHistory": "Work Orders History",
+        "attachments": "Attachments",
         "jhipster-needle-menu-add-entry": "JHipster will add additional entities here (do not translate!)"
       },
       "account": {

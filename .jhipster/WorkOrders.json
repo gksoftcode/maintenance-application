@@ -1,0 +1,85 @@
+{
+  "applications": "*",
+  "changelogDate": "20221223121435",
+  "dto": "no",
+  "embedded": false,
+  "entityTableName": "work_orders",
+  "fields": [
+    {
+      "fieldName": "title",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "description",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "startDate",
+      "fieldType": "Instant"
+    },
+    {
+      "fieldName": "endDate",
+      "fieldType": "Instant"
+    },
+    {
+      "fieldName": "budget",
+      "fieldType": "Long"
+    },
+    {
+      "fieldName": "itemSerial",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "isWaranty",
+      "fieldType": "Boolean"
+    },
+    {
+      "fieldName": "notes",
+      "fieldType": "String"
+    }
+  ],
+  "fluentMethods": true,
+  "jpaMetamodelFiltering": false,
+  "name": "WorkOrders",
+  "pagination": "no",
+  "readOnly": false,
+  "relationships": [
+    {
+      "otherEntityName": "status",
+      "ownerSide": true,
+      "relationshipName": "status",
+      "relationshipType": "one-to-one"
+    },
+    {
+      "otherEntityName": "client",
+      "ownerSide": true,
+      "relationshipName": "client",
+      "relationshipType": "one-to-one"
+    },
+    {
+      "otherEntityName": "itemModels",
+      "ownerSide": true,
+      "relationshipName": "itemModels",
+      "relationshipType": "one-to-one"
+    },
+    {
+      "otherEntityName": "itemBrand",
+      "ownerSide": true,
+      "relationshipName": "itemBrand",
+      "relationshipType": "one-to-one"
+    },
+    {
+      "otherEntityName": "employee",
+      "otherEntityRelationshipName": "workOrders",
+      "relationshipName": "assignedStaff",
+      "relationshipType": "one-to-many"
+    },
+    {
+      "otherEntityName": "workOrdersHistory",
+      "otherEntityRelationshipName": "workOrders",
+      "relationshipName": "workOrdersHistory",
+      "relationshipType": "one-to-many"
+    }
+  ],
+  "service": "serviceClass"
+}

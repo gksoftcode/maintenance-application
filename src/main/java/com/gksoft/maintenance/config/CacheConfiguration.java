@@ -48,6 +48,31 @@ public class CacheConfiguration {
             createCache(cm, com.gksoft.maintenance.domain.User.class.getName());
             createCache(cm, com.gksoft.maintenance.domain.Authority.class.getName());
             createCache(cm, com.gksoft.maintenance.domain.User.class.getName() + ".authorities");
+            createCache(cm, com.gksoft.maintenance.domain.Region.class.getName());
+            createCache(cm, com.gksoft.maintenance.domain.Country.class.getName());
+            createCache(cm, com.gksoft.maintenance.domain.Location.class.getName());
+            createCache(cm, com.gksoft.maintenance.domain.Department.class.getName());
+            createCache(cm, com.gksoft.maintenance.domain.Department.class.getName() + ".employees");
+            createCache(cm, com.gksoft.maintenance.domain.Task.class.getName());
+            createCache(cm, com.gksoft.maintenance.domain.Task.class.getName() + ".jobs");
+            createCache(cm, com.gksoft.maintenance.domain.Employee.class.getName());
+            createCache(cm, com.gksoft.maintenance.domain.Employee.class.getName() + ".jobs");
+            createCache(cm, com.gksoft.maintenance.domain.Job.class.getName());
+            createCache(cm, com.gksoft.maintenance.domain.Job.class.getName() + ".tasks");
+            createCache(cm, com.gksoft.maintenance.domain.JobHistory.class.getName());
+            createCache(cm, com.gksoft.maintenance.domain.Client.class.getName());
+            createCache(cm, com.gksoft.maintenance.domain.Client.class.getName() + ".appintments");
+            createCache(cm, com.gksoft.maintenance.domain.Appintment.class.getName());
+            createCache(cm, com.gksoft.maintenance.domain.Actions.class.getName());
+            createCache(cm, com.gksoft.maintenance.domain.ItemModels.class.getName());
+            createCache(cm, com.gksoft.maintenance.domain.ItemBrand.class.getName());
+            createCache(cm, com.gksoft.maintenance.domain.Status.class.getName());
+            createCache(cm, com.gksoft.maintenance.domain.WorkOrders.class.getName());
+            createCache(cm, com.gksoft.maintenance.domain.WorkOrders.class.getName() + ".assignedStaffs");
+            createCache(cm, com.gksoft.maintenance.domain.WorkOrders.class.getName() + ".workOrdersHistories");
+            createCache(cm, com.gksoft.maintenance.domain.WorkOrdersHistory.class.getName());
+            createCache(cm, com.gksoft.maintenance.domain.WorkOrdersHistory.class.getName() + ".attachments");
+            createCache(cm, com.gksoft.maintenance.domain.Attachments.class.getName());
             // jhipster-needle-ehcache-add-entry
         };
     }
