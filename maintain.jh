@@ -1,0 +1,161 @@
+
+entity Region {
+	regionName String
+}
+
+entity Country {
+	countryName String
+}
+
+// an ignored comment
+/** not an ignored comment */
+entity Location {
+	streetAddress String,
+	postalCode String,
+	city String,
+	stateProvince String
+}
+
+entity Department {
+	departmentName String required
+}
+
+/**
+ * Task entity.
+ * @author The JHipster team.
+ */
+entity Task {
+	title String,
+	description String
+}
+
+/**
+ * The Employee entity.
+ */
+entity Employee {
+	/**
+	* The firstname attribute.
+	*/
+	firstName String,
+	lastName String,
+	email String,
+	phoneNumber String,
+	hireDate Instant,
+	salary Long,
+	commissionPct Long
+}
+
+entity Job {
+	jobTitle String,
+	minSalary Long,
+	maxSalary Long
+}
+
+entity JobHistory {
+	startDate Instant,
+	endDate Instant,
+	language Language
+}
+
+enum Language {
+    FRENCH, ENGLISH, SPANISH
+}
+
+/**
+ * The Employee entity.
+ */
+entity Client {
+ 
+	fullName String,
+	mobileNo String,
+	email String,
+	phoneNumber String,
+}
+entity Appintment {
+    appDate Instant,
+	notes String,
+ }
+entity Actions {
+ 	actionName String,
+ }
+ entity ItemModels {
+ 	modelName String,
+ }
+  entity ItemBrand {
+ 	brandName String,
+ }
+ entity Actions {
+ 	actionName String,
+ }
+  entity Status {
+ 	statusName String,
+ }
+entity WorkOrders {
+	title String,
+	description String,
+ 	startDate Instant,
+    endDate Instant,
+	budget Long,
+		itemSerial String,
+        isWaranty Boolean,
+        notes String,
+        
+}
+entity WorkOrdersHistory {
+isShared Boolean,
+actionDate Instant,
+note String
+ }
+   entity Attachments {
+ 	attachName String,
+    attach Blob
+ }
+relationship OneToOne {
+	Country{region} to Region,
+    WorkOrders{status} to Status,
+     WorkOrders{client} to Client,
+   WorkOrders{itemModels} to ItemModels,
+    WorkOrders{itemBrand} to ItemBrand,
+    Location{country} to Country,
+    Department{location} to Location,
+   WorkOrdersHistory{status} to Status,
+   WorkOrdersHistory{action} to Actions,
+} 
+
+relationship ManyToMany {
+	Job{task(title)} to Task{job}
+}
+
+// defining multiple OneToMany relationships with comments
+relationship OneToMany {
+	Employee to Job{employee}, 
+	Department to Employee{department},
+  Client to Appintment{client},
+  WorkOrders{assignedStaff} to Employee,
+    WorkOrders{workOrdersHistory} to WorkOrdersHistory,
+     WorkOrdersHistory{attachments} to Attachments,
+}
+
+relationship ManyToOne {
+	Employee{manager} to Employee
+}
+
+// defining multiple oneToOne relationships
+relationship OneToOne {
+	JobHistory{job} to Job,
+	JobHistory{department} to Department,
+	JobHistory{employee} to Employee
+}
+
+// Set pagination options
+paginate JobHistory, Employee with infinite-scroll
+paginate Job with pagination
+
+// Use Data Transfer Objects (DTO)
+// dto * with mapstruct
+
+// Set service options to all except few
+service all with serviceClass 
+
+// Set an angular suffix
+// angularSuffix * with mySuffix
