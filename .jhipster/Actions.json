@@ -1,0 +1,20 @@
+{
+  "applications": "*",
+  "changelogDate": "20221223121431",
+  "dto": "no",
+  "embedded": false,
+  "entityTableName": "actions",
+  "fields": [
+    {
+      "fieldName": "actionName",
+      "fieldType": "String"
+    }
+  ],
+  "fluentMethods": true,
+  "jpaMetamodelFiltering": false,
+  "name": "Actions",
+  "pagination": "no",
+  "readOnly": false,
+  "relationships": [],
+  "service": "serviceClass"
+}
